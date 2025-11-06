@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#reloj {
+  font-size: 2rem;
+  text-align: center;
+  transition: color 600ms ease, background-color 600ms ease;
+}
+
+#mensaje {
+    font-size: 5em;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+.mañana { color: black; background-color: white; }      /* mañana */
+.tarde { color: brown; background-color: darkgray; }    /* tarde */
+.noche { color: white; background-color: black; } /* noche */

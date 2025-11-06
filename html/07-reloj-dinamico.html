@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj dinámico</title>
+    <link rel="stylesheet" href="../styles/reloj.css">
+</head>
+<body>
+    <div class="reloj-contenedor">
+        <div id="mensaje">Hora actual</div>
+        <div id="reloj">00:00:00</div>
+    </div>
+    <script type="module">
+        import { relojDinamico } from '../scripts/07-reloj-dinamico.js';
+        // Llamada inicial y arranque del intervalo
+        relojDinamico();
+        setInterval(relojDinamico, 1000);
+    </script>
+</body>
+</html>

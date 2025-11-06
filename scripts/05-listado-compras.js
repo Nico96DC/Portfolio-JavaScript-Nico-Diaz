@@ -1,11 +1,9 @@
-// Debo continuar esto
 export function listadoCompras() {
     const lista = [];
     let pregunta;
 
     pregunta = prompt("Lista de compras\n¿Qué acción desea realizar?\n1. Agregar artículos a la lista\n2. Eliminar artículos\n3. Buscar artículos\n4. Filtrar artículos por precio\n5. Mostrar lista de compras con un orden específico\nSeleccione alguna otra opción o pulse Cancelar para salir.");
 
-/*
     switch (pregunta) {
         case "1":
             while (true) {
@@ -119,5 +117,6 @@ export function listadoCompras() {
             alert("Saliendo de la lista de compras.");
             break;
     }
-*/
 }
+// Nota: no ejecutar la función automáticamente al importar el módulo.
+// La función se ejecuta cuando el usuario pulsa el botón correspondiente (mini5).
