@@ -45,4 +45,28 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btnMini10) btnMini10.addEventListener("click", () => {
         window.location.href = './html/10-formulario-registro.html';
     });
+
+    /*
+    const btnMini11 = document.getElementById("mini11");
+    if (btnMini11) btnMini11.addEventListener("click", () => {
+        window.location.href = './html/11-cronometro.html';
+    });
+
+    const btnMini12 = document.getElementById("mini12");
+    if (btnMini12) btnMini12.addEventListener("click", () => {
+        window.location.href = './html/12-clima.html';
+    });
+    */
+
+    const btnMini13 = document.getElementById("mini13");
+    if (btnMini13) btnMini13.addEventListener("click", () => {
+        window.location.href = './html/13-buscador.html';
+    });
+
+    const btnMini14 = document.getElementById("mini14");
+    if (btnMini14) btnMini14.addEventListener("click", () => {
+        window.location.href = './html/14-notas.html';
+    });
+
+
 });

@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    background-color: darkslategray;
+    width: 30%;
+    align-items: center;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+input,
+button {
+    width: 100%;
+    max-width: 525px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 3px;
+    font-size: 1rem;
+    min-height: 44px;
+    line-height: 1.2;
+}
+
+.error {
+    color: #ff3d3d;
+    font-size: 0.9em;
+    opacity: 1; /* opacidad por defecto */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.error.oculto {
+    transition-delay: 3s;
+    opacity: 0;
+    pointer-events: none;
+}
