@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Formulario de registro</title>
+    <link rel="stylesheet" href="../styles/formulario.css">
+</head>
+
+<body>
+    <form id="formulario-registro">
+        <h1>Registro</h1>
+        <input id="nombre" type="text" placeholder="Ingrese nombre completo..." required>
+        <input id="email" type="email" placeholder="Ingrese correo electrónico..." required>
+        <input id="password" type="password" placeholder="Ingrese contraseña (mínimo 6 caracteres)..." required
+        minlength="6">
+        <button type="submit">Registrar</button>
+        <p id="mensaje" class="error"></p>
+    </form>
+
+    <script src="../scripts/10-formulario-registro.js"></script>
+</body>
+
+</html>

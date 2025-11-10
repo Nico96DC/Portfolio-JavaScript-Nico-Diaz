@@ -1,11 +1,12 @@
+// importando desde scripts
 import { calculadoraSimple } from "./01-calculadora.js";
 import { adivinanzaNumero } from "./02-adivinanza.js";
 import { generadorTablas } from "./03-tablas-multiplicar.js";
 import { conversorTemperatura } from "./04-conversor-temperatura.js";
 import { listadoCompras } from "./05-listado-compras.js";
 import { agendaContactos } from "./06-agenda-contactos.js";
-import { relojDinamico } from "./07-reloj-dinamico.js";
 
+// carga de miniproyectos
 document.addEventListener("DOMContentLoaded", () => {
     const btnMini1 = document.getElementById("mini1");
     if (btnMini1) btnMini1.addEventListener("click", calculadoraSimple);
@@ -26,5 +27,22 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btnMini6) btnMini6.addEventListener("click", agendaContactos);
 
     const btnMini7 = document.getElementById("mini7");
-    if (btnMini7) btnMini7.addEventListener("click", relojDinamico);
+    if (btnMini7) btnMini7.addEventListener("click", () => {
+        window.location.href = './html/07-reloj-dinamico.html';
+    });
+
+    const btnMini8 = document.getElementById("mini8");
+    if (btnMini8) btnMini8.addEventListener("click", () => {
+        window.location.href = './html/08-calculadora-grafica.html';
+    });
+
+    const btnMini9 = document.getElementById("mini9");
+    if (btnMini9) btnMini9.addEventListener("click", () => {
+        window.location.href = './html/09-lista-tareas.html';
+    });
+
+    const btnMini10 = document.getElementById("mini10");
+    if (btnMini10) btnMini10.addEventListener("click", () => {
+        window.location.href = './html/10-formulario-registro.html';
+    });
 });
