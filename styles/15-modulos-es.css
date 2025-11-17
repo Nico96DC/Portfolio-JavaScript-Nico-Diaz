@@ -1,0 +1,123 @@
+:root {
+    --bg: #000000;
+    --card: #252525;
+    --accent: #006ea9;
+    --muted: #cdddff;
+    --glass: rgba(255, 255, 255, 0.6);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(0deg, var(--bg), #070047);
+    padding: 24px;
+}
+
+.card {
+    width: 360px;
+    background: var(--card);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(16, 24, 40, 0.08);
+    border: 1px solid rgba(43, 108, 176, 0.06);
+}
+
+h1 {
+    margin: 0 0 12px 0;
+    font-size: 1.25rem;
+    color: #ffffff;
+
+}
+
+.input-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+input#task-input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #e6eef8;
+    font-size: 0.95rem;
+}
+
+button {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(47, 182, 255, 0.18);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    background: #005f8e;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #fbfdff, #f7fbff);
+    border: 1px solid rgba(15, 23, 42, 0.03);
+}
+
+.task-item.done {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+.task-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-ghost {
+    background: rgb(106, 0, 0);
+    border: 1px dashed rgba(15, 23, 42, 0.06);
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-ghost:hover {
+    background: rgb(150, 0, 0);
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+small {
+    opacity: 0.8;
+}

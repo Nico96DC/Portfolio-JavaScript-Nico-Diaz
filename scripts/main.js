@@ -8,6 +8,7 @@ import { agendaContactos } from "./06-agenda-contactos.js";
 
 // carga de miniproyectos
 document.addEventListener("DOMContentLoaded", () => {
+    // cargado de scripts
     const btnMini1 = document.getElementById("mini1");
     if (btnMini1) btnMini1.addEventListener("click", calculadoraSimple);
 
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnMini6 = document.getElementById("mini6");
     if (btnMini6) btnMini6.addEventListener("click", agendaContactos);
 
+    // cargado de html externos
     const btnMini7 = document.getElementById("mini7");
     if (btnMini7) btnMini7.addEventListener("click", () => {
         window.location.href = './html/07-reloj-dinamico.html';
@@ -46,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = './html/10-formulario-registro.html';
     });
 
-    /*
     const btnMini11 = document.getElementById("mini11");
     if (btnMini11) btnMini11.addEventListener("click", () => {
         window.location.href = './html/11-cronometro.html';
@@ -56,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btnMini12) btnMini12.addEventListener("click", () => {
         window.location.href = './html/12-clima.html';
     });
-    */
 
     const btnMini13 = document.getElementById("mini13");
     if (btnMini13) btnMini13.addEventListener("click", () => {
@@ -68,5 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = './html/14-notas.html';
     });
 
-
+    const btnMini15 = document.getElementById("mini15");
+    if (btnMini15) btnMini15.addEventListener("click", () => {
+        window.location.href = './html/15-modulos-es.html';
+    });
 });
