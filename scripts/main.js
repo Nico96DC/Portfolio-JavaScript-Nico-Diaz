@@ -6,6 +6,7 @@ import { conversorTemperatura } from "./04-conversor-temperatura.js";
 import { listadoCompras } from "./05-listado-compras.js";
 import { agendaContactos } from "./06-agenda-contactos.js";
 
+import { listaProductos } from "./17-lista-producto.js";
 import { bibliotecaVirtual } from "./18-biblioteca.js";
 
 // carga de miniproyectos
@@ -75,6 +76,14 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = './html/15-modulos-es.html';
     });
 
+    const btnMini17 = document.getElementById("mini17");
+    if (btnMini17) btnMini17.addEventListener("click", listaProductos);
+
     const btnMini18 = document.getElementById("mini18");
     if (btnMini18) btnMini18.addEventListener("click", bibliotecaVirtual);
+
+    const btnMini19 = document.getElementById("mini19");
+    if (btnMini19) btnMini19.addEventListener("click", () => {
+        window.location.href = './html/19-graficas.html';
+    });
 });

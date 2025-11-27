@@ -1,3 +1,4 @@
+export function listaProductos() {
     class Producto {
         constructor(nombre, precio) {
             this.nombre = nombre;
@@ -14,3 +15,4 @@
 
     producto1.mostrarInfo();
     producto2.mostrarInfo();
+}
