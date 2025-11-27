@@ -1,12 +1,15 @@
 (() => {
     const KEY = 'listaTareas';
+    // soportar variantes de IDs en el HTML (ej. html/09-lista-tareas.html usa ids diferentes)
     const form = document.getElementById('form-nueva-tarea');
-    const input = document.getElementById('nueva-tarea');
-    const listaEl = document.getElementById('lista-tareas');
+    const input = document.getElementById('nueva-tarea') || document.getElementById('tarea');
+    const listaEl = document.getElementById('lista-tareas') || document.getElementById('lista');
     const limpiarBtn = document.getElementById('limpiar-completadas');
     const contador = document.getElementById('contador');
+    const agregarBtn = document.getElementById('agregar');
 
-    if (!form || !input || !listaEl) return;
+    // requerir al menos el input y el contenedor de lista
+    if (!input || !listaEl) return;
 
     let tareas = JSON.parse(localStorage.getItem(KEY) || '[]');
 
@@ -37,15 +40,42 @@
         return s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
     }
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
+    // función reutilizable para agregar tarea
+    function agregarTareaDesdeInput() {
         const texto = (input.value || '').trim();
         if (!texto) return;
         tareas.push({ texto, completada: false, creado: Date.now() });
         input.value = '';
         guardar();
         render();
-    });
+    }
+
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            agregarTareaDesdeInput();
+        });
+    } else if (agregarBtn) {
+        // si no hay formulario, soportar botón "Agregar"
+        agregarBtn.addEventListener('click', () => {
+            agregarTareaDesdeInput();
+        });
+        // y tecla Enter en el input
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                agregarTareaDesdeInput();
+            }
+        });
+    } else {
+        // si no hay form ni botón, aún permitir Enter en el input
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                agregarTareaDesdeInput();
+            }
+        });
+    }
 
     listaEl.addEventListener('click', (e) => {
         const idx = e.target.dataset && e.target.dataset.idx;

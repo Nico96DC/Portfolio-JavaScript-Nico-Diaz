@@ -1,5 +1,7 @@
 const pantalla = document.getElementById('pantalla');
-const botones = document.querySelectorAll('#calculadora button');
+// seleccionar botones: preferir el contenedor con id "botones" pero
+// usar como fallback cualquier botón dentro de `.calculadora`
+const botones = document.querySelectorAll('#botones button, .calculadora button');
 
 let necesitaBorrar = false; // true después de mostrar resultado o "Error"
 
