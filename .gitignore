@@ -1,0 +1,4 @@
+# Ignorar archivos de configuración y dependencias locales
+scripts/config.js
+.env
+node_modules/
