@@ -52,11 +52,3 @@ Notas y recomendaciones
 
 Contribuciones
 - Este repositorio es un collection personal, pero puedes proponer mejoras mediante pull requests: documentar mejor, extraer claves, mejorar accesibilidad y estilos.
-
-Contacto
-- Autor: `Nico Diaz` (contacto en el repositorio)
-
-Si quieres, puedo:
-- Extraer la `apiKey` de `scripts/12-clima.js` a un archivo de configuración `.env.example`.
-- Añadir instrucciones más detalladas para cada miniproyecto.
-
