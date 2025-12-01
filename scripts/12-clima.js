@@ -1,4 +1,4 @@
-export function clima() {
+function clima() {
     const apiKey = "de2df8d1d8d77b010ac6183c0da377d2";
 
     document.getElementById("buscar").addEventListener("click", async () => {
@@ -27,3 +27,5 @@ export function clima() {
         }
     });
 }
+
+clima();

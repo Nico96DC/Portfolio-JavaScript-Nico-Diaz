@@ -114,7 +114,6 @@ export function listadoCompras() {
             break;
 
         default:
-            alert("Saliendo de la lista de compras.");
             break;
     }
 }

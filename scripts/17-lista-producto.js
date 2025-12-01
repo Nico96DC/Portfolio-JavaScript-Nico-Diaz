@@ -15,4 +15,6 @@ export function listaProductos() {
 
     producto1.mostrarInfo();
     producto2.mostrarInfo();
+
+    alert("Lista de productos mostrada en consola.");
 }

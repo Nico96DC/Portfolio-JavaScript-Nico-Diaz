@@ -26,4 +26,6 @@ export function bibliotecaVirtual() {
     libro2.mostrarInfo();
 
     console.log(`Cantidad de libros del autor ${autor1.nombre}: ${autor1.cantidadLibros}`);
+
+    alert("Datos de la biblioteca mostrados en consola.");
 }

@@ -4,7 +4,6 @@ export function conversorTemperatura() {
     do {
         opcion = prompt("Seleccione la temperatura inicial:\n1. Celsius\n2. Fahrenheit\n3. Kelvin");
         if (opcion == null) {
-            alert("Operación cancelada.");
             return;
         }
     } while (opcion !== "1" && opcion !== "2" && opcion !== "3" && opcion !== null);
@@ -13,7 +12,6 @@ export function conversorTemperatura() {
         conversion = prompt("Seleccione la temperatura a la que desea convertir:\n1. Celsius\n2. Fahrenheit\n3. Kelvin");
     
         if (conversion == null) {
-            alert("Operación cancelada.");
             return;
         }
     } while (conversion !== "1" && conversion !== "2" && conversion !== "3" && conversion !== null);

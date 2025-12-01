@@ -48,7 +48,6 @@ export function agendaContactos() {
             exportarAgenda();
             break;
         default:
-            alert("Saliendo de la agenda de contactos.");
             break;
     }
 
