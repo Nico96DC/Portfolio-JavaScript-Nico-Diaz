@@ -136,36 +136,5 @@ Recomendación práctica (método más simple para desarrollarlo localmente):
 
 También se incluye `.env.example` para referencia si en algún flujo de CI/local se prefiere usar variables de entorno. El navegador no puede leer `.env` directamente sin un paso de build/server que inyecte variables, por eso el enfoque de `config.js` es el más directo para este proyecto estático.
 
-## Notas y recomendaciones
-- Prioridad (acciones recomendadas):
-	- Alto: mover la `apiKey` fuera del código público (usar `scripts/config.js` o mecanismos de servidor). Ya añadí `config.example.js` y `.env.example` para facilitarlo.
-	- Medio: ampliar la documentación de cada miniproyecto con capturas y ejemplos de entrada/salida.
-	- Bajo: añadir tests automáticos y una guía de contribución extensa.
-- CORS / `file://`: algunos `fetch` requieren servir los archivos por HTTP; usar `npx http-server` o `Live Server`.
-- Pedagógico: muchos ejercicios usan `prompt`, `alert` y `console.log`. Están pensados para aprender conceptos; para producción conviene sustituir por UI accesible y manejo de errores robusto.
-
 ## Contribuciones
 - Este repositorio es una colección personal, pero las mejoras son bienvenidas mediante pull requests: documentar mejor, extraer claves, mejorar accesibilidad y estilos.
-
-
-Cómo ejecutar
-- Opción rápida (sin servidor): abrir `index.html` en el navegador (doble clic). Algunos ejemplos que usan `fetch` pueden fallar por políticas CORS si se abren con el esquema `file://`.
-- Opción recomendada (local server): desde la raíz del proyecto ejecutar un servidor HTTP simple.
-
-	- Usando `npx` (Node.js instalado):
-
-		```powershell
-		npx http-server -c-1
-		```
-
-	- O con `Live Server` de VS Code: botón "Go Live" o abrir la carpeta en VS Code y lanzar Live Server.
-
-- Después, en el navegador ir a `http://localhost:8080` (u otro puerto que indique la herramienta) y usar `index.html`.
-
-Notas y recomendaciones
-- `12-clima.js` contiene una `apiKey` embebida en el código. Para pruebas rápidas está bien, pero se recomienda retirar la clave del repositorio y usar variables de entorno o un archivo de configuración local antes de publicar.
-- Las páginas dentro de `html/` son versiones con interfaz propia; `index.html` ejecuta otras versiones integradas vía `scripts/main.js`.
-- Muchos ejemplos usan `prompt`, `alert` y `console.log` como técnicas pedagógicas. Para producción, sustituir por UI y manejo de errores más robusto.
-
-Contribuciones
-- Este repositorio es un collection personal, pero puedes proponer mejoras mediante pull requests: documentar mejor, extraer claves, mejorar accesibilidad y estilos.
