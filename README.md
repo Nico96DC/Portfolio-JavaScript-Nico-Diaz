@@ -94,7 +94,7 @@ Aquí un resumen breve por cada miniproyecto más relevante (qué pide y qué de
 
 	- `http://localhost:8080/html/12-clima.html` — abrir app de clima en su propia página.
 
-Instrucciones para ejecutar el proyecto (Node + front)
+** Instrucciones para ejecutar el proyecto Node (número 20) **
 
 Requisitos
 - Node.js (v16+ recomendado)
