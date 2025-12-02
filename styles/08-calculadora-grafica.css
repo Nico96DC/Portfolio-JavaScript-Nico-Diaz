@@ -1,89 +1,124 @@
+/* Variables de color para ajustar fácilmente */
+:root {
+    --bg-page: #000000;
+    --calc-bg: #009ca1;
+    --input-bg: #4e4e4e;
+    --text: #ffffff;
+    --btn-default: #1fb6bf;
+    --btn-operator: #ff9f1c;
+    --btn-equal: #2ec4b6;
+    --btn-reset: #ff6b6b;
+    --btn-extras: #8e6bf4;
+    --btn-border: rgba(255,255,255,0.08);
+}
+
+/* Ajustes generales */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: black;
-    color: white;
+    background-color: var(--bg-page);
+    color: var(--text);
     margin: 0;
     padding: 0;
 }
 
+/* Calculadora */
 .calculadora {
     max-width: 400px;
     margin: 100px auto;
     padding: 20px;
-    background-color: #010052;
+    background: linear-gradient(180deg, rgba(0, 101, 160, 0.95), rgba(0, 45, 158, 0.95));
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+/* Input */
 input {
-    width: 95%;
+    width: 92.5%;
     height: 50px;
     font-size: 24px;
     text-align: right;
     align-items: center;
     margin-bottom: 10px;
     padding: 10px;
-    border: none;
+    border: solid 5px var(--btn-border);
+    box-shadow: 0 6px 0 rgba(0,0,0,0.35), 0 2px 10px rgba(0,0,0,0.25);
     border-radius: 5px;
-    background-color: #555555;
-    color: white;
+    background-color: var(--input-bg);
+    color: var(--text);
 }
 
-#botones {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
+/* Botones: colores armonizados */
 button {
     width: 22%;
     height: 70px;
     font-size: 20px;
     margin: 1%;
-    border: solid 1px white;
+    border: none; /* eliminar borde fino para depender de la sombra */
     border-radius: 10px;
-    background-color: #4CAF50;
-    color: white;
+    background-color: var(--btn-default);
+    color: #021416;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: filter 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    /* Sombra principal para efecto "elevado" + difusa para profundidad */
+    box-shadow: 0 6px 0 rgba(0,0,0,0.35), 0 2px 10px rgba(0,0,0,0.25);
+    position: relative;
+    overflow: visible;
+}
+
+/* brillo superior para simular cara superior pulida */
+button::after {
+    content: "";
+    position: absolute;
+    left: 6%;
+    right: 6%;
+    top: 6%;
+    height: 40%;
+    background: linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.04));
+    border-radius: 8px;
+    pointer-events: none;
+    mix-blend-mode: overlay;
 }
 
 button:hover {
-    background-color: #45a049;
+    filter: brightness(0.94);
+    transform: translateY(-1px);
 }
 
+/* estado "hundido" al presionar: mover abajo y reducir sombra */
+button:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.35), 0 1px 6px rgba(0,0,0,0.2);
+}
+
+/* foco accesible */
+button:focus {
+    outline: none;
+    box-shadow: 0 6px 0 rgba(0,0,0,0.35), 0 2px 12px rgba(0,0,0,0.35), 0 0 0 3px rgba(46,196,182,0.12);
+}
+
+/* Reinicio */
 #reinicio {
-    background-color: #f44336;
-    transition: background-color 0.3s;
+    background-color: var(--btn-reset);
 }
+#reinicio:hover { filter: brightness(0.92); }
 
-#reinicio:hover {
-    background-color: #d32f2f;
-}
-
+/* Igual */
 #igual {
-    background-color: #008CBA;
-    transition: background-color 0.3s;
+    background-color: var(--btn-equal);
+    color: #042825;
 }
+#igual:hover { filter: brightness(0.95); }
 
-#igual:hover {
-    background-color: #007bb5;
-}
-
+/* Operador */
 #operador {
-    background-color: #ff9800;
-    transition: background-color 0.3s;
+    background-color: var(--btn-operator);
+    color: #241300;
 }
+#operador:hover { filter: brightness(0.93); }
 
-#operador:hover {
-    background-color: #e68a00;
-}
-
+/* Extras */
 #extras {
-    background-color: #9c27b0;
-    transition: background-color 0.3s;
+    background-color: var(--btn-extras);
+    color: #f7f3ff;
 }
-
-#extras:hover {
-    background-color: #7b1fa2;
-}
+#extras:hover { filter: brightness(0.92); }

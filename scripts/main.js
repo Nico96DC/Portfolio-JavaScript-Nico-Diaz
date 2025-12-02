@@ -8,6 +8,7 @@ import { agendaContactos } from "./06-agenda-contactos.js";
 
 import { listaProductos } from "./17-lista-producto.js";
 import { bibliotecaVirtual } from "./18-biblioteca.js";
+import { node } from "../node/index.js";
 
 // carga de miniproyectos
 document.addEventListener("DOMContentLoaded", () => {
@@ -85,5 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnMini19 = document.getElementById("mini19");
     if (btnMini19) btnMini19.addEventListener("click", () => {
         window.location.href = './html/19-graficas.html';
+    });
+
+    const btnMini20 = document.getElementById("mini20");
+    if (btnMini20) btnMini20.addEventListener("click", () => {
+        window.location.href = 'http://localhost:3000';
     });
 });

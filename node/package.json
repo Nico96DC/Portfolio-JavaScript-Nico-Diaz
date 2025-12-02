@@ -2,11 +2,23 @@
   "name": "proyecto-20",
   "version": "1.0.0",
   "description": "Script para leer y escribir JSON",
+  "homepage": "https://github.com/Nico96DC/Portfolio-JavaScript-Nico-Diaz#readme",
+  "bugs": {
+    "url": "https://github.com/Nico96DC/Portfolio-JavaScript-Nico-Diaz/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nico96DC/Portfolio-JavaScript-Nico-Diaz.git"
+  },
   "license": "MIT",
   "author": "Nicolás Diaz",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
   }
 }

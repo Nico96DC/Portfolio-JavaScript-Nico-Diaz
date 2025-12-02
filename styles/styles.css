@@ -8,7 +8,7 @@ body {
 #opciones {
     text-align: center;
     padding: 20px;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #opciones h2 {
@@ -18,20 +18,61 @@ body {
 
 #opciones button {
     display: block;
-    width: 300px;
+    width: 350px;
     margin: 10px auto;
     padding: 12px 20px;
     font-size: 16px;
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+    position: relative;
+
+    box-shadow: 0 8px 0 rgba(0,0,0,0.35), 0 6px 18px rgba(0,0,0,0.35);
+    overflow: visible;
+}
+
+/* brillo superior para simular cara pulida */
+#opciones button::after {
+    content: "";
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    top: 8%;
+    height: 38%;
+    background: linear-gradient(rgba(255,255,255,0.22), rgba(255,255,255,0.03));
+    border-radius: 6px;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    z-index: 1;
 }
 
 #opciones button:hover {
-    background-color: #45a049;
+    transform: translateY(-2px);
+    filter: brightness(1.04);
+    box-shadow: 0 10px 0 rgba(0,0,0,0.33), 0 8px 22px rgba(0,0,0,0.38);
+}
+
+#opciones button:disabled {
+    background-color: #aaaaaa;
+    color: black;
+    cursor: not-allowed;
+    filter: grayscale(0.6) brightness(0.8);
+    box-shadow: 0 4px 0 rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* estado "hundido" al presionar: mover abajo y reducir sombra */
+#opciones button:active {
+    transform: translateY(4px);
+    box-shadow: 0 3px 0 rgba(0,0,0,0.36), 0 2px 8px rgba(0,0,0,0.25);
+}
+
+/* foco accesible */
+#opciones button:focus {
+    outline: none;
+    box-shadow: 0 8px 0 rgba(0,0,0,0.35), 0 6px 22px rgba(46,196,182,0.12);
 }
 
 #opciones #salida {

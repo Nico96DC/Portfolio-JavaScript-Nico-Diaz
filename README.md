@@ -94,6 +94,34 @@ Aquí un resumen breve por cada miniproyecto más relevante (qué pide y qué de
 
 	- `http://localhost:8080/html/12-clima.html` — abrir app de clima en su propia página.
 
+Instrucciones para ejecutar el proyecto (Node + front)
+
+Requisitos
+- Node.js (v16+ recomendado)
+- npm (incluido con Node.js)
+
+Clonar el repositorio
+```bash
+git clone https://github.com/tu-usuario/tu-repositorio.git
+cd Portfolio-JavaScript-Nico-Diaz
+```
+
+Instalar dependencias
+```bash
+npm init
+```
+Configurar el proyecto para poder abrirlo a través del editor de código, y luego instalar la siguiente dependencia:
+```bash
+npm install --save express
+```
+
+Ejecutar servidor Node (sirve la API y puede servir archivos estáticos si está configurado)
+```bash
+npm start
+```
+
+- Luego de ello, se puede ejecutar el script desde el botón definido como Proyecto 20, el cual redirige a la página: http://localhost:3000/index.html
+
 ## API key y configuración local
 Para evitar subir claves sensibles al repositorio, el proyecto ahora incluye artefactos de ejemplo para configurar la clave de OpenWeatherMap localmente:
 
