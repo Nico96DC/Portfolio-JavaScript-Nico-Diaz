@@ -120,7 +120,7 @@ Ejecutar servidor Node (sirve la API y puede servir archivos estáticos si está
 npm start
 ```
 
-- Luego de ello, se puede ejecutar el script desde el botón definido como Proyecto 20, el cual redirige a la página: http://localhost:3000/index.html
+- Luego de ello, se puede ejecutar el script desde el botón definido como Proyecto 20, el cual redirige a la página: http://localhost:3000/
 
 ## API key y configuración local
 Para evitar subir claves sensibles al repositorio, el proyecto ahora incluye artefactos de ejemplo para configurar la clave de OpenWeatherMap localmente:
