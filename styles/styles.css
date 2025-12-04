@@ -5,6 +5,12 @@ body {
 	color: white;
 }
 
+p {
+    width: 35%;
+    text-align: center;
+    margin: 20px auto 20px auto;
+}
+
 #opciones {
     text-align: center;
     padding: 20px;

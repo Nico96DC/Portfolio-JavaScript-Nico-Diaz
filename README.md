@@ -1,4 +1,3 @@
-
 # Portfolio de Miniproyectos (JavaScript)
 
 Proyecto personal que reúne varios miniproyectos en JavaScript creados como ejercicios y demos. Incluye tanto scripts que se ejecutan desde `index.html` como páginas HTML individuales en la carpeta `html/`.
@@ -94,7 +93,7 @@ Aquí un resumen breve por cada miniproyecto más relevante (qué pide y qué de
 
 	- `http://localhost:8080/html/12-clima.html` — abrir app de clima en su propia página.
 
-** Instrucciones para ejecutar el proyecto Node (número 20) **
+** Instrucciones para ejecutar los últimos dos proyectos (20 y 21) **
 
 Requisitos
 - Node.js (v16+ recomendado)
@@ -102,7 +101,7 @@ Requisitos
 
 Clonar el repositorio
 ```bash
-git clone https://github.com/tu-usuario/tu-repositorio.git
+git clone https://github.com/Nico96DC/Portfolio-JavaScript-Nico-Diaz.git
 cd Portfolio-JavaScript-Nico-Diaz
 ```
 
@@ -112,6 +111,7 @@ npm init
 ```
 Configurar el proyecto para poder abrirlo a través del editor de código, y luego instalar la siguiente dependencia:
 ```bash
+npm install cors --save
 npm install --save express
 ```
 
@@ -121,6 +121,11 @@ npm start
 ```
 
 - Luego de ello, se puede ejecutar el script desde el botón definido como Proyecto 20, el cual redirige a la página: http://localhost:3000/
+
+## Nota respecto al proyecto 21
+El proyecto de React está hecho de dos formas:
+- Una versión en HTML que carga React desde CDN y JSX desde el navegador, sin necesidad de configurar un proyecto; pero que llega a ser lento para producción
+- Una versión de producción con flujo moderno y soporte de módulos, pero que requiere de una configuración inicial y creación de la build
 
 ## API key y configuración local
 Para evitar subir claves sensibles al repositorio, el proyecto ahora incluye artefactos de ejemplo para configurar la clave de OpenWeatherMap localmente:

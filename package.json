@@ -1,8 +1,7 @@
 {
   "name": "miniproyectos",
   "version": "1.0.0",
-  "private": true,
-  "description": "Script para leer y escribir JSON",
+  "description": "Scripts para ejecutar los proyectos Node y React",
   "homepage": "https://github.com/Nico96DC/Portfolio-JavaScript-Nico-Diaz#readme",
   "bugs": {
     "url": "https://github.com/Nico96DC/Portfolio-JavaScript-Nico-Diaz/issues"
@@ -17,15 +16,15 @@
   "main": "index.js",
   "scripts": {
     "start": "node node/index.js",
-    "dev": "nodemon node/index.js",
-    "build:react": "cd react-app && npm run build",
-    "serve:react-build": "node node/index.js"
+    "dev": "npx nodemon node/index.js",
+    "build:react": "cd react-app && npm install && npm run build",
+    "dev:react": "cd react-app && npm install && npm run dev",
+    "serve:react-build": "npx serve -s react-app/dist -l 3000",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.18.2"
+    "express": "^5.2.1"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.22"
-  }
+  "devDependencies": {}
 }

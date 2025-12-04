@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>React - Tarjetas</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- React + ReactDOM (desarrollo) -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Babel para transpilar JSX en el navegador (solo desarrollo) -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        function Tarjeta({ titulo, imagen, texto }) {
+            return (
+                <div className="tarjeta">
+                    <img src={imagen} alt={titulo} />
+                    <h2>{titulo}</h2>
+                    <p>{texto}</p>
+                </div>
+            );
+        }
+
+        function App() {
+            const datos = [ /* ... */];
+            return <div>{datos.map((d, i) => <Tarjeta key={i} {...d} />)}</div>;
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+</body>
+
+</html>

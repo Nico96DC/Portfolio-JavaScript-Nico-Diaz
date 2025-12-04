@@ -8,7 +8,18 @@ import { agendaContactos } from "./06-agenda-contactos.js";
 
 import { listaProductos } from "./17-lista-producto.js";
 import { bibliotecaVirtual } from "./18-biblioteca.js";
-import { node } from "../node/index.js";
+
+async function servidorDisponible(baseUrl, timeout = 2000) {
+    try {
+        const controller = new AbortController();
+        const id = setTimeout(() => controller.abort(), timeout);
+        const res = await fetch(`${baseUrl}/leer-datos`, { method: 'GET', signal: controller.signal });
+        clearTimeout(id);
+        return res.ok;
+    } catch (e) {
+        return false;
+    }
+}
 
 // carga de miniproyectos
 document.addEventListener("DOMContentLoaded", () => {
@@ -89,7 +100,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const btnMini20 = document.getElementById("mini20");
-    if (btnMini20) btnMini20.addEventListener("click", () => {
-        window.location.href = 'http://localhost:3000';
+    if (btnMini20) btnMini20.addEventListener("click", async () => {
+        const url = 'http://localhost:3000';
+        const ok = await servidorDisponible(url, 1800);
+        if (ok) {
+            // abrir en nueva pestaña de forma segura
+            window.open(url, '_blank', 'noopener');
+        } else {
+            alert('No se pudo conectar a http://localhost:3000. Inicie el servidor Node (ej.: en la raíz del repo: npm install && npm start) y vuelva a intentarlo.');
+        }
+    });
+
+    const btnMini21Demo = document.getElementById("mini21-demo");
+    if (btnMini21Demo) btnMini21Demo.addEventListener("click", () => {
+        window.location.href = './html/21-tarjetas.html';
+    });
+
+    const btnMini21Prod = document.getElementById("mini21-prod");
+    if (btnMini21Prod) btnMini21Prod.addEventListener("click", () => {
+        window.location.href = 'http://localhost:5173/';
     });
 });

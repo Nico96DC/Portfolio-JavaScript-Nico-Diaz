@@ -1,4 +1,6 @@
 # Ignorar archivos de configuración y dependencias locales
-scripts/config.js
-.env
 node_modules/
+react-app/node_modules/
+react-app/dist/
+dist/
+.env
