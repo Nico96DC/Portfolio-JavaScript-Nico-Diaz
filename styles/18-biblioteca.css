@@ -5,8 +5,8 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #00146f 0%, #000000 100%);
   min-height: 100vh;
   padding: 20px;
 }
@@ -21,7 +21,7 @@ body {
 }
 
 header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(180deg, #0024c2 0%, #0d006d 100%);
   color: white;
   padding: 30px;
   text-align: center;
@@ -47,7 +47,7 @@ section:last-of-type {
 }
 
 h2 {
-  color: #667eea;
+  color: #0024c2;
   margin-bottom: 20px;
   font-size: 1.5em;
 }
@@ -72,12 +72,12 @@ h2 {
 }
 
 .tab-btn:hover {
-  color: #667eea;
+  color: #0024c2;
 }
 
 .tab-btn.active {
-  color: #667eea;
-  border-bottom-color: #667eea;
+  color: #0024c2;
+  border-bottom-color: #0024c2;
 }
 
 .tab-content {
@@ -113,11 +113,11 @@ select {
 input[type="text"]:focus,
 select:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: #0024c2;
 }
 
 .btn-agregar {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0024c2 0%, #0d006d 100%);
   color: white;
   padding: 12px 30px;
   border: none;
@@ -130,7 +130,7 @@ select:focus {
 
 .btn-agregar:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 5px 15px rgba(0, 36, 194, 0.4);
 }
 
 .btn-agregar:active {
@@ -184,7 +184,7 @@ select:focus {
   display: block;
   font-size: 1.8em;
   font-weight: bold;
-  color: #667eea;
+  color: #0024c2;
 }
 
 .autores-grid {
@@ -206,7 +206,7 @@ select:focus {
 .autor-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  border-color: #667eea;
+  border-color: #0024c2;
 }
 
 .autor-nombre {
@@ -228,7 +228,7 @@ select:focus {
   padding: 10px;
   margin-bottom: 8px;
   border-radius: 6px;
-  border-left: 3px solid #667eea;
+  border-left: 3px solid #0024c2;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -264,7 +264,7 @@ select:focus {
 }
 
 .cantidad-libros strong {
-  color: #667eea;
+  color: #0024c2;
   font-weight: bold;
 }
 
@@ -321,14 +321,14 @@ footer {
 }
 
 footer a {
-  color: #667eea;
+  color: #0024c2;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 footer a:hover {
-  color: #764ba2;
+  color: #0d006d;
 }
 
 @keyframes fadeIn {

@@ -1,0 +1,31 @@
+{
+  "name": "miniproyectos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Script para leer y escribir JSON",
+  "homepage": "https://github.com/Nico96DC/Portfolio-JavaScript-Nico-Diaz#readme",
+  "bugs": {
+    "url": "https://github.com/Nico96DC/Portfolio-JavaScript-Nico-Diaz/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nico96DC/Portfolio-JavaScript-Nico-Diaz.git"
+  },
+  "license": "MIT",
+  "author": "Nicolás Diaz",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node node/index.js",
+    "dev": "nodemon node/index.js",
+    "build:react": "cd react-app && npm run build",
+    "serve:react-build": "node node/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

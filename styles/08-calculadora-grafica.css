@@ -1,138 +1,150 @@
-/* Variables de color para ajustar fácilmente */
-:root {
-    --bg-page: linear-gradient(135deg, #00146f 0%, #000000 100%);
-    --calc-bg: #009ca1;
-    --input-bg: #1a1a2e;
-    --text: #ffffff;
-    --btn-default: linear-gradient(135deg, #0066cc 0%, #003366 100%);
-    --btn-operator: linear-gradient(135deg, #ff9500 0%, #ff6600 100%);
-    --btn-equal: linear-gradient(135deg, #00d4ff 0%, #0088cc 100%);
-    --btn-reset: linear-gradient(135deg, #ff6b35 0%, #cc3300 100%);
-    --btn-extras: linear-gradient(135deg, #7700ff 0%, #5500aa 100%);
-    --btn-border: #00d4ff;
-    --accent: #00d4ff;
-}
-
-/* Ajustes generales */
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--bg-page);
-    color: var(--text);
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #00146f 0%, #000000 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-/* Calculadora */
-.calculadora {
-    max-width: 400px;
-    margin: 100px auto;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.3);
-    border: 2px solid var(--accent);
+}
+
+.calculadora {
+    max-width: 420px;
+    width: 100%;
+    background: white;
     border-radius: 15px;
-    box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    padding: 30px;
 }
 
-/* Input */
-input {
-    width: 92.5%;
-    height: 50px;
-    font-size: 24px;
+#pantalla {
+    width: 100%;
+    height: 80px;
+    font-size: 2em;
     text-align: right;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 2px solid var(--accent);
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3), inset 0 2px 5px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    background-color: var(--input-bg);
-    color: var(--text);
-}
-
-/* Botones: colores armonizados */
-button {
-    width: 22%;
-    height: 70px;
-    font-size: 20px;
-    margin: 1%;
-    border: 1px solid rgba(0, 212, 255, 0.3);
-    border-radius: 8px;
-    background: var(--btn-default);
-    color: #ffffff;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: visible;
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border: 3px solid #0024c2;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #f0f4ff 0%, #e8f0ff 100%);
+    color: #0024c2;
     font-weight: bold;
+    font-family: 'Courier New', monospace;
+    box-shadow: 0 3px 10px rgba(0, 36, 194, 0.2);
 }
 
-/* brillo superior para simular cara superior pulida */
-button::after {
-    content: "";
-    position: absolute;
-    left: 6%;
-    right: 6%;
-    top: 6%;
-    height: 40%;
-    background: linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.04));
-    border-radius: 8px;
-    pointer-events: none;
-    mix-blend-mode: overlay;
+#pantalla:focus {
+    outline: none;
+    border-color: #001369;
+    box-shadow: 0 5px 15px rgba(0, 36, 194, 0.3);
+}
+
+#botones {
+    display: grid;
+    gap: 12px;
+}
+
+#botones > div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+button {
+    height: 65px;
+    font-size: 1.3em;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: linear-gradient(180deg, #0024c2 0%, #0d006d 100%);
+    color: white;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    box-shadow: 0 0 25px rgba(0, 212, 255, 0.6);
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 36, 194, 0.4);
 }
 
-/* estado "hundido" al presionar: mover abajo y reducir sombra */
 button:active {
     transform: translateY(0);
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* foco accesible */
 button:focus {
-    outline: none;
-    box-shadow: 0 0 30px rgba(0, 212, 255, 0.8);
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
 }
 
-/* Reinicio */
+/* Botón de reinicio (C) */
 #reinicio {
-    background: var(--btn-reset);
-}
-#reinicio:hover { 
-    box-shadow: 0 0 25px rgba(255, 107, 53, 0.6);
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
 }
 
-/* Igual */
-#igual {
-    background: var(--btn-equal);
-    color: #ffffff;
-}
-#igual:hover { 
-    box-shadow: 0 0 25px rgba(0, 212, 255, 0.6);
+#reinicio:hover {
+    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4);
 }
 
-/* Operador */
+/* Operadores (+, -, *, /) */
 #operador {
-    background: var(--btn-operator);
-    color: #ffffff;
-}
-#operador:hover { 
-    box-shadow: 0 0 25px rgba(255, 149, 0, 0.6);
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
 }
 
-/* Extras */
-#extras {
-    background: var(--btn-extras);
-    color: #ffffff;
+#operador:hover {
+    box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
 }
-#extras:hover { 
-    box-shadow: 0 0 25px rgba(119, 0, 255, 0.6);
+
+/* Botón igual (=) */
+#igual {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+#igual:hover {
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+}
+
+/* Paréntesis y extras */
+#extras {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+}
+
+#extras:hover {
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
+}
+
+/* Botón decimal */
+.decimal {
+    background: linear-gradient(135deg, #0024c2 0%, #0d006d 100%);
+}
+
+@media (max-width: 480px) {
+    .calculadora {
+        padding: 20px;
+    }
+
+    #pantalla {
+        height: 70px;
+        font-size: 1.5em;
+    }
+
+    button {
+        height: 55px;
+        font-size: 1.1em;
+    }
+
+    #botones {
+        gap: 8px;
+    }
+
+    #botones > div {
+        gap: 8px;
+    }
 }

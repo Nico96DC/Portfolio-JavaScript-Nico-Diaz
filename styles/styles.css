@@ -1,9 +1,12 @@
 body {
-	font-family: Arial, Helvetica, sans-serif;
-	margin: 20px;
-	background: linear-gradient(135deg, #00146f 0%, #000000 100%);
-	color: white;
-	min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #00146f 0%, #000000 100%);
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 p {
@@ -12,95 +15,195 @@ p {
     margin: 20px auto 20px auto;
 }
 
+.container {
+    max-width: 900px;
+    width: 100%;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(180deg, #0024c2 0%, #0d006d 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.95;
+    letter-spacing: 0.5px;
+}
+
 #opciones {
     text-align: center;
-    padding: 20px;
+    padding: 40px;
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 #opciones h2 {
+    color: #0024c2;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.buttons-grid {
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
     margin-bottom: 20px;
-    color: #00d4ff;
-    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
 }
 
 #opciones button {
     display: block;
-    width: 350px;
-    margin: 10px auto;
-    padding: 12px 20px;
-    font-size: 16px;
-    background: linear-gradient(135deg, #0066cc 0%, #003366 100%);
+    padding: 16px 24px;
+    font-size: 1em;
+    width: 300px;
+    background: linear-gradient(135deg, #0024c2 0%, #0d006d 100%);
     color: white;
-    border: 2px solid #00d4ff;
-    border-radius: 8px;
+    overflow: visible;
+    border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 36, 194, 0.2);
     position: relative;
-    font-weight: 500;
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
-    overflow: visible;
 }
 
-/* brillo superior para simular cara pulida */
-#opciones button::after {
+#opciones button::before {
     content: "";
     position: absolute;
-    left: 8%;
-    right: 8%;
-    top: 8%;
-    height: 38%;
-    background: linear-gradient(rgba(255,255,255,0.22), rgba(255,255,255,0.03));
-    border-radius: 6px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.03));
     pointer-events: none;
-    mix-blend-mode: overlay;
-    z-index: 1;
+    border-radius: 10px;
 }
 
 #opciones button:hover {
-    background: linear-gradient(135deg, #0099ff 0%, #004d99 100%);
-    box-shadow: 0 0 25px rgba(0, 212, 255, 0.6), inset 0 0 20px rgba(0, 212, 255, 0.2);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 36, 194, 0.35);
+    background: linear-gradient(135deg, #0036f0 0%, #1a1a8f 100%);
+}
+
+#opciones button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 36, 194, 0.25);
+}
+
+#opciones button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 36, 194, 0.3), 0 8px 20px rgba(0, 36, 194, 0.3);
 }
 
 #opciones button:disabled {
-    background: linear-gradient(135deg, #444444 0%, #222222 100%);
-    color: #999;
-    border-color: #666;
-    box-shadow: 0 0 10px rgba(100, 100, 100, 0.3);
+    background: linear-gradient(135deg, #cccccc 0%, #999999 100%);
+    color: #666;
     cursor: not-allowed;
-}
-
-/* estado "hundido" al presionar: mover abajo y reducir sombra */
-#opciones button:active {
-    transform: translateY(0);
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
-}
-
-/* foco accesible */
-#opciones button:focus {
-    outline: none;
-    box-shadow: 0 0 30px rgba(0, 212, 255, 0.8), inset 0 0 20px rgba(0, 212, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: none;
 }
 
 #opciones #salida {
-    background: linear-gradient(135deg, #ff6b35 0%, #cc3300 100%);
-    border: 2px solid #ff9966;
-    box-shadow: 0 0 15px rgba(255, 107, 53, 0.3);
-}	
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
 
 #opciones #salida:hover {
-    background: linear-gradient(135deg, #ff8555 0%, #ff4400 100%);
-    box-shadow: 0 0 25px rgba(255, 107, 53, 0.6);
+    box-shadow: 0 8px 20px rgba(239, 68, 68, 0.35);
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
 }
 
 #opciones #limpieza {
-    background: linear-gradient(135deg, #ff6b35 0%, #cc3300 100%);
-    border: 2px solid #ff9966;
-    box-shadow: 0 0 15px rgba(255, 107, 53, 0.3);
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
 }
 
 #opciones #limpieza:hover {
-    background: linear-gradient(135deg, #ff8555 0%, #ff4400 100%);
-    box-shadow: 0 0 25px rgba(255, 107, 53, 0.6);
+    box-shadow: 0 8px 20px rgba(239, 68, 68, 0.35);
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+}
+
+footer {
+    background: #f9fafb;
+    padding: 20px 30px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    font-size: 0.9em;
+    color: #666;
+}
+
+footer a {
+    color: #0024c2;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #0d006d;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    #opciones {
+        padding: 30px 20px;
+    }
+
+    #opciones h2 {
+        font-size: 1.5em;
+        margin-bottom: 25px;
+    }
+
+    .buttons-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    #opciones button {
+        padding: 14px 20px;
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    header {
+        padding: 30px 20px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    #opciones h2 {
+        font-size: 1.3em;
+    }
 }
