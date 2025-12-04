@@ -6,9 +6,6 @@ import { conversorTemperatura } from "./04-conversor-temperatura.js";
 import { listadoCompras } from "./05-listado-compras.js";
 import { agendaContactos } from "./06-agenda-contactos.js";
 
-import { listaProductos } from "./17-lista-producto.js";
-import { bibliotecaVirtual } from "./18-biblioteca.js";
-
 async function servidorDisponible(baseUrl, timeout = 2000) {
     try {
         const controller = new AbortController();
@@ -89,10 +86,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const btnMini17 = document.getElementById("mini17");
-    if (btnMini17) btnMini17.addEventListener("click", listaProductos);
+    if (btnMini17) btnMini17.addEventListener("click", () => {
+        window.location.href = './html/17-lista-producto.html';
+    });
 
     const btnMini18 = document.getElementById("mini18");
-    if (btnMini18) btnMini18.addEventListener("click", bibliotecaVirtual);
+    if (btnMini18) btnMini18.addEventListener("click", () => {
+        window.location.href = './html/18-biblioteca.html';
+    });
 
     const btnMini19 = document.getElementById("mini19");
     if (btnMini19) btnMini19.addEventListener("click", () => {
@@ -100,24 +101,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const btnMini20 = document.getElementById("mini20");
-    if (btnMini20) btnMini20.addEventListener("click", async () => {
-        const url = 'http://localhost:3000';
-        const ok = await servidorDisponible(url, 1800);
-        if (ok) {
-            // abrir en nueva pestaña de forma segura
-            window.open(url, '_blank', 'noopener');
-        } else {
-            alert('No se pudo conectar a http://localhost:3000. Inicie el servidor Node (ej.: en la raíz del repo: npm install && npm start) y vuelva a intentarlo.');
-        }
+    if (btnMini20) btnMini20.addEventListener("click", () => {
+        window.location.href = './html/20-node-json.html';
     });
 
-    const btnMini21Demo = document.getElementById("mini21-demo");
+    const btnMini21Demo = document.getElementById("mini21");
     if (btnMini21Demo) btnMini21Demo.addEventListener("click", () => {
         window.location.href = './html/21-tarjetas.html';
-    });
-
-    const btnMini21Prod = document.getElementById("mini21-prod");
-    if (btnMini21Prod) btnMini21Prod.addEventListener("click", () => {
-        window.location.href = 'http://localhost:5173/';
     });
 });

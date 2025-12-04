@@ -1,24 +1,29 @@
 /* Variables de color para ajustar fácilmente */
 :root {
-    --bg-page: #000000;
+    --bg-page: linear-gradient(135deg, #00146f 0%, #000000 100%);
     --calc-bg: #009ca1;
-    --input-bg: #4e4e4e;
+    --input-bg: #1a1a2e;
     --text: #ffffff;
-    --btn-default: #1fb6bf;
-    --btn-operator: #ff9f1c;
-    --btn-equal: #2ec4b6;
-    --btn-reset: #ff6b6b;
-    --btn-extras: #8e6bf4;
-    --btn-border: rgba(255,255,255,0.08);
+    --btn-default: linear-gradient(135deg, #0066cc 0%, #003366 100%);
+    --btn-operator: linear-gradient(135deg, #ff9500 0%, #ff6600 100%);
+    --btn-equal: linear-gradient(135deg, #00d4ff 0%, #0088cc 100%);
+    --btn-reset: linear-gradient(135deg, #ff6b35 0%, #cc3300 100%);
+    --btn-extras: linear-gradient(135deg, #7700ff 0%, #5500aa 100%);
+    --btn-border: #00d4ff;
+    --accent: #00d4ff;
 }
 
 /* Ajustes generales */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--bg-page);
+    background: var(--bg-page);
     color: var(--text);
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Calculadora */
@@ -26,9 +31,10 @@ body {
     max-width: 400px;
     margin: 100px auto;
     padding: 20px;
-    background: linear-gradient(180deg, rgba(0, 101, 160, 0.95), rgba(0, 45, 158, 0.95));
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--accent);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
 }
 
 /* Input */
@@ -40,9 +46,9 @@ input {
     align-items: center;
     margin-bottom: 10px;
     padding: 10px;
-    border: solid 5px var(--btn-border);
-    box-shadow: 0 6px 0 rgba(0,0,0,0.35), 0 2px 10px rgba(0,0,0,0.25);
-    border-radius: 5px;
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3), inset 0 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
     background-color: var(--input-bg);
     color: var(--text);
 }
@@ -53,16 +59,16 @@ button {
     height: 70px;
     font-size: 20px;
     margin: 1%;
-    border: none; /* eliminar borde fino para depender de la sombra */
-    border-radius: 10px;
-    background-color: var(--btn-default);
-    color: #021416;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 8px;
+    background: var(--btn-default);
+    color: #ffffff;
     cursor: pointer;
-    transition: filter 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    /* Sombra principal para efecto "elevado" + difusa para profundidad */
-    box-shadow: 0 6px 0 rgba(0,0,0,0.35), 0 2px 10px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
     position: relative;
     overflow: visible;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+    font-weight: bold;
 }
 
 /* brillo superior para simular cara superior pulida */
@@ -80,45 +86,53 @@ button::after {
 }
 
 button:hover {
-    filter: brightness(0.94);
-    transform: translateY(-1px);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.6);
+    transform: translateY(-2px);
 }
 
 /* estado "hundido" al presionar: mover abajo y reducir sombra */
 button:active {
-    transform: translateY(4px);
-    box-shadow: 0 2px 0 rgba(0,0,0,0.35), 0 1px 6px rgba(0,0,0,0.2);
+    transform: translateY(0);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
 }
 
 /* foco accesible */
 button:focus {
     outline: none;
-    box-shadow: 0 6px 0 rgba(0,0,0,0.35), 0 2px 12px rgba(0,0,0,0.35), 0 0 0 3px rgba(46,196,182,0.12);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.8);
 }
 
 /* Reinicio */
 #reinicio {
-    background-color: var(--btn-reset);
+    background: var(--btn-reset);
 }
-#reinicio:hover { filter: brightness(0.92); }
+#reinicio:hover { 
+    box-shadow: 0 0 25px rgba(255, 107, 53, 0.6);
+}
 
 /* Igual */
 #igual {
-    background-color: var(--btn-equal);
-    color: #042825;
+    background: var(--btn-equal);
+    color: #ffffff;
 }
-#igual:hover { filter: brightness(0.95); }
+#igual:hover { 
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.6);
+}
 
 /* Operador */
 #operador {
-    background-color: var(--btn-operator);
-    color: #241300;
+    background: var(--btn-operator);
+    color: #ffffff;
 }
-#operador:hover { filter: brightness(0.93); }
+#operador:hover { 
+    box-shadow: 0 0 25px rgba(255, 149, 0, 0.6);
+}
 
 /* Extras */
 #extras {
-    background-color: var(--btn-extras);
-    color: #f7f3ff;
+    background: var(--btn-extras);
+    color: #ffffff;
 }
-#extras:hover { filter: brightness(0.92); }
+#extras:hover { 
+    box-shadow: 0 0 25px rgba(119, 0, 255, 0.6);
+}

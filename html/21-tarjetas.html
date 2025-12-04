@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>React - Tarjetas</title>
+    <link rel="stylesheet" href="../styles/21-tarjetas.css" />
 </head>
 
 <body>
@@ -28,8 +29,55 @@
         }
 
         function App() {
-            const datos = [ /* ... */];
-            return <div>{datos.map((d, i) => <Tarjeta key={i} {...d} />)}</div>;
+            const datos = [
+                {
+                    titulo: "JavaScript",
+                    imagen: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23F7DF1E' width='200' height='200'/%3E%3Ctext x='50%25' y='50%25' font-size='24' font-weight='bold' fill='%23000' text-anchor='middle' dy='.3em'%3EJS%3C/text%3E%3C/svg%3E",
+                    texto: "Lenguaje de programación versátil para desarrollo web."
+                },
+                {
+                    titulo: "React",
+                    imagen: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%2361DAFB' width='200' height='200'/%3E%3Ctext x='50%25' y='50%25' font-size='20' font-weight='bold' fill='%23000' text-anchor='middle' dy='.3em'%3E⚛ REACT%3C/text%3E%3C/svg%3E",
+                    texto: "Biblioteca de Facebook para construir interfaces de usuario."
+                },
+                {
+                    titulo: "Node.js",
+                    imagen: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%2368A063' width='200' height='200'/%3E%3Ctext x='50%25' y='50%25' font-size='20' font-weight='bold' fill='%23fff' text-anchor='middle' dy='.3em'%3ENode.js%3C/text%3E%3C/svg%3E",
+                    texto: "Entorno de ejecución de JavaScript en el servidor."
+                },
+                {
+                    titulo: "HTML5",
+                    imagen: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23E34C26' width='200' height='200'/%3E%3Ctext x='50%25' y='50%25' font-size='28' font-weight='bold' fill='%23fff' text-anchor='middle' dy='.3em'%3E%26lt;%26gt;%3C/text%3E%3C/svg%3E",
+                    texto: "Lenguaje de marcado para crear páginas web."
+                },
+                {
+                    titulo: "CSS3",
+                    imagen: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%231572B6' width='200' height='200'/%3E%3Ctext x='50%25' y='50%25' font-size='24' font-weight='bold' fill='%23fff' text-anchor='middle' dy='.3em'%3ECSS3%3C/text%3E%3C/svg%3E",
+                    texto: "Lenguaje para estilizar y diseñar interfaces web."
+                },
+                {
+                    titulo: "Express.js",
+                    imagen: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%2390C53F' width='200' height='200'/%3E%3Ctext x='50%25' y='50%25' font-size='18' font-weight='bold' fill='%23000' text-anchor='middle' dy='.3em'%3EExpress%3C/text%3E%3C/svg%3E",
+                    texto: "Framework web minimalista para Node.js."
+                }
+            ];
+
+            return (
+                <div className="app-container">
+                    <header className="app-header">
+                        <h1>📚 Tecnologías Web</h1>
+                        <p>Explora las herramientas modernas para desarrollo web</p>
+                    </header>
+                    <div className="tarjetas-container">
+                        {datos.map((d, i) => (
+                            <Tarjeta key={i} {...d} />
+                        ))}
+                    </div>
+                    <footer className="app-footer">
+                        <a href="../index.html">⬅️ Volver al menú principal</a>
+                    </footer>
+                </div>
+            );
         }
 
         ReactDOM.createRoot(document.getElementById('root')).render(<App />);

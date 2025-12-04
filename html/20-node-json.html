@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Datos JSON - Node.js</title>
+    <link rel="stylesheet" href="../styles/20-node-json.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>📄 Gestor de Datos JSON</h1>
+            <p>Miniproyecto 20: Node.js con Express</p>
+        </header>
+
+        <div class="info-box">
+            <h3>ℹ️ Información</h3>
+            <p>Este proyecto demuestra la lectura y escritura de un archivo JSON usando Node.js y Express.</p>
+            <p><strong>Estado del servidor:</strong> <span id="server-status">Verificando...</span></p>
+        </div>
+
+        <section class="add-section">
+            <h2>➕ Agregar Nuevo Elemento</h2>
+            <form id="form-agregar">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa un nombre" required>
+                </div>
+                <button type="submit">Agregar</button>
+            </form>
+        </section>
+
+        <section class="list-section">
+            <h2>📋 Lista de Elementos</h2>
+            <button id="btn-recargar" class="btn-secondary">🔄 Recargar Datos</button>
+            <div id="mensaje"></div>
+            <ul id="lista-datos"></ul>
+        </section>
+
+        <footer>
+            <a href="../index.html">⬅️ Volver al menú principal</a>
+        </footer>
+    </div>
+
+    <script src="../scripts/20-node-json.js"></script>
+</body>
+
+</html>
